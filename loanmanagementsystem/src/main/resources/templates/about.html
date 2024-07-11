@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Loan Management System</title>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/IUho3FjN6m8Z8tJdIsPxDl72TCvfeSA2lSYPyLv4PS-7mVuxNpdFDkziu-Bfk1llcBN1=w480-h960-rw" type="image/x-icon">
+    <style>
+        :root {
+            --dark-green: #023020;
+            --light-color: #ffffff;
+            --hover-color: #ff5722;
+            --nav-font: 'Roboto', sans-serif;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: url('https://www.tvscredit.com/wp-content/uploads/2023/07/Used-car-loans-2.png') no-repeat center center/cover;
+            color: #505050;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+       nav {
+            background-color: var(--dark-green);
+            color: var(--light-color);
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            margin-right: auto;
+        }
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .nav-links li {
+            padding: 0 20px;
+        }
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            color: var(--hover-color);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left; 
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .about {
+            width: 80%;
+            max-width: 900px;
+            margin: 120px auto 20px; 
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        .about h3, .about p {
+            margin: 0.5rem;
+            color: #333;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .social {
+            display: flex;
+            justify-content: center;	
+            padding:20px;
+            gap: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+        }
+        .social a img {
+            width: 30px;
+            height: 30px;
+        }
+        .social p {
+            font-size: 1.2rem;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+          footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--dark-green);
+            color: var(--light-color);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+     <nav>
+        <div class="logo">
+            <a href="http://localhost:8080/"><img src="https://www.financialexpress.com/wp-content/uploads/2022/08/TVS-Credit.png"></a>
+        </div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="javascript:void(0)">Login &#9662;</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/userlogin}">User Login</a>
+                    <a th:href="@{/adminlogin}">Admin Login</a>
+                </div>
+            </li>
+            <li><a th:href="@{/signup}">Signup</a></li>
+            <li><a th:href="@{/about}">About Us</a></li>
+            <li><a th:href="@{/customers}">Our Customers</a></li>
+            <li><a th:href="@{/loans}">Explore Our Loans</a></li>
+        </ul>
+    </nav> 
+    <section class="about">
+        <h3>About Our Services</h3>
+        <p>We are dedicated to fulfilling the dreams of every Indian. Our affordable credit solutions empower individuals across India’s diverse landscape to realise their aspirations.</p>
+        <h3>Committed to Excellence</h3>
+        <p>Leveraging cutting-edge technology and analytics, we offer a range of financial products, from Two Wheeler and Used Car Loans to Tractors Loans and Mid Corporate Loans, catering to people across various socio-economic backgrounds.</p> 
+        <p>Discover more about our dedication to our customers, offering transparency and quality service.</p>
+    </section>
+    <section class="social">
+        <a href="https://x.com/TVSCredit"><img src="https://cdn.punchng.com/wp-content/uploads/2023/07/24084806/Twitter-new-logo.jpeg" alt="Twitter" /></a>
+        <a href="https://in.linkedin.com/company/tvscredit"><img src="https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" /></a>
+        <a href="https://www.youtube.com/@TVSCreditServices"><img src="https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png" alt="Youtube" /></a>
+        
+    </section>
+    <footer>
+        © 2024 Loan Management System. All rights reserved.
+    </footer>
+</body>
+</html>
